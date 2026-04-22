@@ -1,6 +1,20 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { Mail, Lock, Zap, ArrowRight } from "lucide-react";
+import { Mail, Lock, Zap, ArrowRight, ShieldCheck } from "lucide-react";
+
+const ROLE_REDIRECT: Record<string, string> = {
+  admin: "/",
+  hr_manager: "/",
+  recruiter: "/recruitment",
+  employee: "/profile",
+};
+
+const ROLE_LABELS: Record<string, { label: string; color: string; bg: string }> = {
+  admin:      { label: "Admin",       color: "#7C3AED", bg: "#F5F3FF" },
+  hr_manager: { label: "HR Manager",  color: "#059669", bg: "#ECFDF5" },
+  recruiter:  { label: "Recruiter",   color: "#D97706", bg: "#FFFBEB" },
+  employee:   { label: "Employee",    color: "#2563EB", bg: "#EFF6FF" },
+};
 
 export function Login() {
   const navigate = useNavigate();
@@ -9,11 +23,37 @@ export function Login() {
   const [remember, setRemember] = useState(false);
   const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [resetEmail, setResetEmail] = useState("");
+  const [error, setError] = useState("");
+  const [detectedRole, setDetectedRole] = useState("");
+
+  const handleEmailChange = (val: string) => {
+    setEmail(val);
+    // Auto-detect role as user types email
+    const users: { email: string; role: string }[] =
+      JSON.parse(localStorage.getItem("registeredUsers") || "[]");
+    const match = users.find((u) => u.email === val);
+    setDetectedRole(match?.role ?? "");
+  };
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
+
+    const users: { fullName: string; email: string; password: string; role: string }[] =
+      JSON.parse(localStorage.getItem("registeredUsers") || "[]");
+
+    const user = users.find((u) => u.email === email && u.password === password);
+
+    if (!user) {
+      setError("Invalid email or password.");
+      return;
+    }
+
     sessionStorage.setItem("isLoggedIn", "true");
-    navigate("/");
+    sessionStorage.setItem("userFullName", user.fullName);
+    sessionStorage.setItem("userEmail", user.email);
+    sessionStorage.setItem("userRole", user.role);
+    navigate(ROLE_REDIRECT[user.role] ?? "/");
   };
 
   const handleResetPassword = (e: React.FormEvent) => {
@@ -121,7 +161,7 @@ export function Login() {
                   required
                   placeholder="admin@nexushr.com"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => handleEmailChange(e.target.value)}
                   className="w-full rounded-2xl pl-12 pr-4 py-3.5 text-sm outline-none transition-all focus:ring-2 focus:ring-emerald-500/30"
                   style={{
                     background: "var(--background)",
@@ -130,6 +170,23 @@ export function Login() {
                   }}
                 />
               </div>
+              {detectedRole && ROLE_LABELS[detectedRole] && (
+                <div className="flex items-center gap-1.5 mt-2 ml-1">
+                  <ShieldCheck size={13} style={{ color: ROLE_LABELS[detectedRole].color }} />
+                  <span
+                    style={{
+                      fontSize: "12px",
+                      fontWeight: 700,
+                      color: ROLE_LABELS[detectedRole].color,
+                      background: ROLE_LABELS[detectedRole].bg,
+                      padding: "2px 10px",
+                      borderRadius: "20px",
+                    }}
+                  >
+                    {ROLE_LABELS[detectedRole].label}
+                  </span>
+                </div>
+              )}
             </div>
 
             <div>
@@ -170,6 +227,12 @@ export function Login() {
               </a>
             </div>
 
+            {error && (
+              <p style={{ fontSize: "13px", fontWeight: 600, color: "#DC2626", textAlign: "center" }}>
+                {error}
+              </p>
+            )}
+
             <button
               type="submit"
               className="w-full relative group overflow-hidden rounded-2xl py-4 mt-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
@@ -187,7 +250,21 @@ export function Login() {
           </form>
         )}
 
-        <div className="mt-8 text-center">
+        <div className="mt-6 text-center">
+          <p style={{ fontSize: "13px", fontWeight: 600, color: "#064E3B" }}>
+            New to NexusHR?{" "}
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); navigate("/signup"); }}
+              className="hover:underline"
+              style={{ fontWeight: 800, color: "#059669" }}
+            >
+              Create an Account
+            </a>
+          </p>
+        </div>
+
+        <div className="mt-4 text-center">
           <p style={{ fontSize: "12px", fontWeight: 700, color: "#064E3B", opacity: 0.7 }}>
             v2.0.4 · Enterprise Protection Active
           </p>

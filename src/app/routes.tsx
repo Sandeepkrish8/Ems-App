@@ -13,6 +13,7 @@ import { LeaveManagement } from "./pages/LeaveManagement";
 import { Departments } from "./pages/Departments";
 import { UserProfile } from "./pages/UserProfile";
 import { Login } from "./pages/Login";
+import { Signup } from "./pages/Signup";
 import SmartSearch from "./pages/SmartSearch";
 import { ShiftSchedule } from "./pages/ShiftSchedule";
 
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
   {
     path: "/login",
     Component: Login,
+  },
+  {
+    path: "/signup",
+    Component: Signup,
   },
   {
     path: "/",
