@@ -16,6 +16,11 @@ import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import SmartSearch from "./pages/SmartSearch";
 import { ShiftSchedule } from "./pages/ShiftSchedule";
+import { OnboardingWizard } from "./pages/OnboardingWizard";
+import { NotFound } from "./pages/NotFound";
+import { Help } from "./pages/Help";
+import { Training } from "./pages/Training";
+import { Documents } from "./pages/Documents";
 
 const AuthGuard = ({ children }: { children: React.ReactNode }) => {
   const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
@@ -30,6 +35,10 @@ export const router = createBrowserRouter([
   {
     path: "/signup",
     Component: Signup,
+  },
+  {
+    path: "/onboarding",
+    Component: OnboardingWizard,
   },
   {
     path: "/",
@@ -53,6 +62,13 @@ export const router = createBrowserRouter([
       { path: "profile", Component: UserProfile },
       { path: "smart-search", Component: SmartSearch },
       { path: "schedule", Component: ShiftSchedule },
+      { path: "help", Component: Help },
+      { path: "training", Component: Training },
+      { path: "documents", Component: Documents },
     ],
+  },
+  {
+    path: "*",
+    Component: NotFound,
   },
 ]);
