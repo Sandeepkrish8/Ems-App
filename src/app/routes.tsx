@@ -14,6 +14,9 @@ import { Departments } from "./pages/Departments";
 import { UserProfile } from "./pages/UserProfile";
 import { Login } from "./pages/Login";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0d5d363 (Add Signup page and update Login, Recruitment, and routes)
 import { Signup } from "./pages/Signup";
 import SmartSearch from "./pages/SmartSearch";
 import { ShiftSchedule } from "./pages/ShiftSchedule";
@@ -40,16 +43,22 @@ export const router = createBrowserRouter([
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0d5d363 (Add Signup page and update Login, Recruitment, and routes)
     path: "/signup",
     Component: Signup,
   },
   {
+<<<<<<< HEAD
     path: "/onboarding",
     Component: OnboardingWizard,
   },
   {
 =======
 >>>>>>> 380915e (Add full project source)
+=======
+>>>>>>> 0d5d363 (Add Signup page and update Login, Recruitment, and routes)
     path: "/",
     element: (
       <AuthGuard>
