@@ -5,7 +5,6 @@ import {
   CalendarCheck,
   IndianRupee,
   Briefcase,
-
   TrendingUp,
   BarChart3,
   Settings,
@@ -16,6 +15,9 @@ import {
   Store,
   Sparkles,
   CalendarClock,
+  BookOpen,
+  FolderOpen,
+  HelpCircle,
 } from "lucide-react";
 
 
@@ -39,7 +41,10 @@ const navItems = [
   { icon: Briefcase, label: "Recruitment", path: "/recruitment" },
   { icon: TrendingUp, label: "Performance", path: "/performance" },
   { icon: BarChart3, label: "Reports", path: "/reports" },
+  { icon: BookOpen, label: "Training", path: "/training" },
+  { icon: FolderOpen, label: "Documents", path: "/documents" },
   { icon: Settings, label: "Settings", path: "/settings" },
+  { icon: HelpCircle, label: "Help & Support", path: "/help" },
 ];
 
 export function Sidebar({ collapsed, onToggle, isMobile = false, mobileOpen = false }: SidebarProps) {
