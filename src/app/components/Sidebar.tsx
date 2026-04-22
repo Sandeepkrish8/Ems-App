@@ -6,9 +6,12 @@ import {
   IndianRupee,
   Briefcase,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 380915e (Add full project source)
+=======
+>>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
   TrendingUp,
   BarChart3,
   Settings,
@@ -20,11 +23,17 @@ import {
   Sparkles,
   CalendarClock,
 <<<<<<< HEAD
+<<<<<<< HEAD
   BookOpen,
   FolderOpen,
   HelpCircle,
 =======
 >>>>>>> 380915e (Add full project source)
+=======
+  BookOpen,
+  FolderOpen,
+  HelpCircle,
+>>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
 } from "lucide-react";
 
 
@@ -49,13 +58,19 @@ const navItems = [
   { icon: TrendingUp, label: "Performance", path: "/performance" },
   { icon: BarChart3, label: "Reports", path: "/reports" },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
   { icon: BookOpen, label: "Training", path: "/training" },
   { icon: FolderOpen, label: "Documents", path: "/documents" },
   { icon: Settings, label: "Settings", path: "/settings" },
   { icon: HelpCircle, label: "Help & Support", path: "/help" },
+<<<<<<< HEAD
 =======
   { icon: Settings, label: "Settings", path: "/settings" },
 >>>>>>> 380915e (Add full project source)
+=======
+>>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
 ];
 
 export function Sidebar({ collapsed, onToggle, isMobile = false, mobileOpen = false }: SidebarProps) {

@@ -25,11 +25,14 @@ import { NotFound } from "./pages/NotFound";
 import { Help } from "./pages/Help";
 import { Training } from "./pages/Training";
 import { Documents } from "./pages/Documents";
+<<<<<<< HEAD
 import NotificationsHistory from "./pages/Notifications";
 =======
 import SmartSearch from "./pages/SmartSearch";
 import { ShiftSchedule } from "./pages/ShiftSchedule";
 >>>>>>> 380915e (Add full project source)
+=======
+>>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
 
 const AuthGuard = ({ children }: { children: React.ReactNode }) => {
   const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
@@ -51,14 +54,20 @@ export const router = createBrowserRouter([
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
     path: "/onboarding",
     Component: OnboardingWizard,
   },
   {
+<<<<<<< HEAD
 =======
 >>>>>>> 380915e (Add full project source)
 =======
 >>>>>>> 0d5d363 (Add Signup page and update Login, Recruitment, and routes)
+=======
+>>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
     path: "/",
     element: (
       <AuthGuard>
@@ -81,18 +90,27 @@ export const router = createBrowserRouter([
       { path: "smart-search", Component: SmartSearch },
       { path: "schedule", Component: ShiftSchedule },
 <<<<<<< HEAD
+<<<<<<< HEAD
       { path: "help", Component: Help },
       { path: "training", Component: Training },
       { path: "documents", Component: Documents },
       { path: "notifications", Component: NotificationsHistory }, // ✅ moved inside Layout
+=======
+      { path: "help", Component: Help },
+      { path: "training", Component: Training },
+      { path: "documents", Component: Documents },
+>>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
     ],
   },
   {
     path: "*",
     Component: NotFound,
   },
+<<<<<<< HEAD
 =======
     ],
   },
 >>>>>>> 380915e (Add full project source)
+=======
+>>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
 ]);

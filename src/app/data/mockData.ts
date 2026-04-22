@@ -646,6 +646,9 @@ export const leaveRequests = [
   },
 ];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
 
 export const trainingCourses = [
   {
@@ -875,5 +878,8 @@ export const helpCategories = [
   { id: "HC005", title: "Reports & Analytics", description: "Export, schedule, and analyze data", icon: "BarChart3", count: 9, color: "#EF4444", bg: "#FEF2F2" },
   { id: "HC006", title: "Settings & Security", description: "Account, roles, and permissions", icon: "Settings", count: 11, color: "#8B5CF6", bg: "#F5F3FF" },
 ];
+<<<<<<< HEAD
 =======
 >>>>>>> 380915e (Add full project source)
+=======
+>>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
