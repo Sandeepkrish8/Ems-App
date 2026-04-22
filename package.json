@@ -9,6 +9,11 @@
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
+<<<<<<< HEAD
+=======
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+>>>>>>> 380915e (Add full project source)
     "@emotion/styled": "11.14.1",
     "@mui/icons-material": "7.3.5",
     "@mui/material": "7.3.5",
@@ -36,8 +41,13 @@
     "@radix-ui/react-slot": "1.1.2",
     "@radix-ui/react-switch": "1.1.3",
     "@radix-ui/react-tabs": "1.1.3",
+<<<<<<< HEAD
     "@radix-ui/react-toggle": "1.1.2",
     "@radix-ui/react-toggle-group": "1.1.2",
+=======
+    "@radix-ui/react-toggle-group": "1.1.2",
+    "@radix-ui/react-toggle": "1.1.2",
+>>>>>>> 380915e (Add full project source)
     "@radix-ui/react-tooltip": "1.1.8",
     "canvas-confetti": "1.9.4",
     "class-variance-authority": "0.7.1",
@@ -49,11 +59,17 @@
     "lucide-react": "0.487.0",
     "motion": "12.23.24",
     "next-themes": "0.4.6",
+<<<<<<< HEAD
     "react": "18.3.1",
     "react-day-picker": "8.10.1",
     "react-dnd": "16.0.1",
     "react-dnd-html5-backend": "16.0.1",
     "react-dom": "18.3.1",
+=======
+    "react-day-picker": "8.10.1",
+    "react-dnd": "16.0.1",
+    "react-dnd-html5-backend": "16.0.1",
+>>>>>>> 380915e (Add full project source)
     "react-hook-form": "7.55.0",
     "react-popper": "2.3.0",
     "react-resizable-panels": "2.1.7",
@@ -68,7 +84,10 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
+<<<<<<< HEAD
     "@types/canvas-confetti": "^1.9.0",
+=======
+>>>>>>> 380915e (Add full project source)
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "4.7.0",
@@ -93,4 +112,8 @@
       "vite": "6.3.5"
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 380915e (Add full project source)

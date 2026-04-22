@@ -296,7 +296,11 @@ export function UserProfile() {
             Ryan Park
           </h2>
           <p style={{ color: "var(--muted-foreground)", fontSize: "13px", marginTop: "2px" }}>
+<<<<<<< HEAD
             HR Administrator &nbsp;|&nbsp; NexusHR Technologies
+=======
+            HR Administrator &nbsp;·&nbsp; NexusHR Technologies
+>>>>>>> 380915e (Add full project source)
           </p>
         </div>
         <div className="flex gap-2">

@@ -5,6 +5,10 @@ import {
   CalendarCheck,
   IndianRupee,
   Briefcase,
+<<<<<<< HEAD
+=======
+
+>>>>>>> 380915e (Add full project source)
   TrendingUp,
   BarChart3,
   Settings,
@@ -15,9 +19,12 @@ import {
   Store,
   Sparkles,
   CalendarClock,
+<<<<<<< HEAD
   BookOpen,
   FolderOpen,
   HelpCircle,
+=======
+>>>>>>> 380915e (Add full project source)
 } from "lucide-react";
 
 
@@ -41,10 +48,14 @@ const navItems = [
   { icon: Briefcase, label: "Recruitment", path: "/recruitment" },
   { icon: TrendingUp, label: "Performance", path: "/performance" },
   { icon: BarChart3, label: "Reports", path: "/reports" },
+<<<<<<< HEAD
   { icon: BookOpen, label: "Training", path: "/training" },
   { icon: FolderOpen, label: "Documents", path: "/documents" },
   { icon: Settings, label: "Settings", path: "/settings" },
   { icon: HelpCircle, label: "Help & Support", path: "/help" },
+=======
+  { icon: Settings, label: "Settings", path: "/settings" },
+>>>>>>> 380915e (Add full project source)
 ];
 
 export function Sidebar({ collapsed, onToggle, isMobile = false, mobileOpen = false }: SidebarProps) {

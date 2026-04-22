@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+<<<<<<< HEAD
 import { Mail, Lock, Zap, ArrowRight, ShieldCheck } from "lucide-react";
 
 const ROLE_REDIRECT: Record<string, string> = {
@@ -15,6 +16,9 @@ const ROLE_LABELS: Record<string, { label: string; color: string; bg: string }> 
   recruiter:  { label: "Recruiter",   color: "#D97706", bg: "#FFFBEB" },
   employee:   { label: "Employee",    color: "#2563EB", bg: "#EFF6FF" },
 };
+=======
+import { Mail, Lock, Zap, ArrowRight } from "lucide-react";
+>>>>>>> 380915e (Add full project source)
 
 export function Login() {
   const navigate = useNavigate();
@@ -23,6 +27,7 @@ export function Login() {
   const [remember, setRemember] = useState(false);
   const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [resetEmail, setResetEmail] = useState("");
+<<<<<<< HEAD
   const [error, setError] = useState("");
   const [detectedRole, setDetectedRole] = useState("");
 
@@ -54,6 +59,13 @@ export function Login() {
     sessionStorage.setItem("userEmail", user.email);
     sessionStorage.setItem("userRole", user.role);
     navigate(ROLE_REDIRECT[user.role] ?? "/");
+=======
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    sessionStorage.setItem("isLoggedIn", "true");
+    navigate("/");
+>>>>>>> 380915e (Add full project source)
   };
 
   const handleResetPassword = (e: React.FormEvent) => {
@@ -161,7 +173,11 @@ export function Login() {
                   required
                   placeholder="admin@nexushr.com"
                   value={email}
+<<<<<<< HEAD
                   onChange={(e) => handleEmailChange(e.target.value)}
+=======
+                  onChange={(e) => setEmail(e.target.value)}
+>>>>>>> 380915e (Add full project source)
                   className="w-full rounded-2xl pl-12 pr-4 py-3.5 text-sm outline-none transition-all focus:ring-2 focus:ring-emerald-500/30"
                   style={{
                     background: "var(--background)",
@@ -170,6 +186,7 @@ export function Login() {
                   }}
                 />
               </div>
+<<<<<<< HEAD
               {detectedRole && ROLE_LABELS[detectedRole] && (
                 <div className="flex items-center gap-1.5 mt-2 ml-1">
                   <ShieldCheck size={13} style={{ color: ROLE_LABELS[detectedRole].color }} />
@@ -187,6 +204,8 @@ export function Login() {
                   </span>
                 </div>
               )}
+=======
+>>>>>>> 380915e (Add full project source)
             </div>
 
             <div>
@@ -227,12 +246,15 @@ export function Login() {
               </a>
             </div>
 
+<<<<<<< HEAD
             {error && (
               <p style={{ fontSize: "13px", fontWeight: 600, color: "#DC2626", textAlign: "center" }}>
                 {error}
               </p>
             )}
 
+=======
+>>>>>>> 380915e (Add full project source)
             <button
               type="submit"
               className="w-full relative group overflow-hidden rounded-2xl py-4 mt-2 transition-all hover:scale-[1.02] active:scale-[0.98]"
@@ -250,6 +272,7 @@ export function Login() {
           </form>
         )}
 
+<<<<<<< HEAD
         <div className="mt-6 text-center">
           <p style={{ fontSize: "13px", fontWeight: 600, color: "#064E3B" }}>
             New to NexusHR?{" "}
@@ -265,6 +288,9 @@ export function Login() {
         </div>
 
         <div className="mt-4 text-center">
+=======
+        <div className="mt-8 text-center">
+>>>>>>> 380915e (Add full project source)
           <p style={{ fontSize: "12px", fontWeight: 700, color: "#064E3B", opacity: 0.7 }}>
             v2.0.4 · Enterprise Protection Active
           </p>

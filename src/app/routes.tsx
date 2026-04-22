@@ -13,6 +13,7 @@ import { LeaveManagement } from "./pages/LeaveManagement";
 import { Departments } from "./pages/Departments";
 import { UserProfile } from "./pages/UserProfile";
 import { Login } from "./pages/Login";
+<<<<<<< HEAD
 import { Signup } from "./pages/Signup";
 import SmartSearch from "./pages/SmartSearch";
 import { ShiftSchedule } from "./pages/ShiftSchedule";
@@ -22,6 +23,10 @@ import { Help } from "./pages/Help";
 import { Training } from "./pages/Training";
 import { Documents } from "./pages/Documents";
 import NotificationsHistory from "./pages/Notifications";
+=======
+import SmartSearch from "./pages/SmartSearch";
+import { ShiftSchedule } from "./pages/ShiftSchedule";
+>>>>>>> 380915e (Add full project source)
 
 const AuthGuard = ({ children }: { children: React.ReactNode }) => {
   const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
@@ -34,6 +39,7 @@ export const router = createBrowserRouter([
     Component: Login,
   },
   {
+<<<<<<< HEAD
     path: "/signup",
     Component: Signup,
   },
@@ -42,6 +48,8 @@ export const router = createBrowserRouter([
     Component: OnboardingWizard,
   },
   {
+=======
+>>>>>>> 380915e (Add full project source)
     path: "/",
     element: (
       <AuthGuard>
@@ -63,6 +71,7 @@ export const router = createBrowserRouter([
       { path: "profile", Component: UserProfile },
       { path: "smart-search", Component: SmartSearch },
       { path: "schedule", Component: ShiftSchedule },
+<<<<<<< HEAD
       { path: "help", Component: Help },
       { path: "training", Component: Training },
       { path: "documents", Component: Documents },
@@ -73,4 +82,8 @@ export const router = createBrowserRouter([
     path: "*",
     Component: NotFound,
   },
+=======
+    ],
+  },
+>>>>>>> 380915e (Add full project source)
 ]);

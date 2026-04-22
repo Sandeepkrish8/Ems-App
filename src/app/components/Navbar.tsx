@@ -1,4 +1,5 @@
 import { useState } from "react";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 import { Search, Bell, ChevronDown, Settings, LogOut, User } from "lucide-react";
 
@@ -28,10 +29,14 @@ const COLORS: Record<string, string> = {
   performance: "#ef4444",
   attendance:  "#06b6d4",
 };
+=======
+import { Search, Bell, ChevronDown, Settings, LogOut, User, Moon, Sun } from "lucide-react";
+>>>>>>> 380915e (Add full project source)
 
 export function Navbar({ title }: { title?: string }) {
   const [showProfile, setShowProfile] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
+<<<<<<< HEAD
   const navigate = useNavigate();
 
   const unreadCount = NOTIFICATIONS.filter((n) => n.unread).length;
@@ -47,6 +52,15 @@ export function Navbar({ title }: { title?: string }) {
     navigate("/notifications");
     setShowNotifications(false);
   }
+=======
+
+  const notifications = [
+    { id: 1, text: "Leave request from Sarah Johnson pending", time: "2h ago", unread: true },
+    { id: 2, text: "Payroll processing complete for March", time: "5h ago", unread: true },
+    { id: 3, text: "New candidate applied for UX Designer", time: "1d ago", unread: false },
+    { id: 4, text: "Performance review deadline tomorrow", time: "1d ago", unread: false },
+  ];
+>>>>>>> 380915e (Add full project source)
 
   return (
     <header
@@ -58,7 +72,11 @@ export function Navbar({ title }: { title?: string }) {
         boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
       }}
     >
+<<<<<<< HEAD
       {/* Left - Title */}
+=======
+      {/* Left */}
+>>>>>>> 380915e (Add full project source)
       <div className="flex items-center gap-3">
         <h1 style={{ color: "#1E293B", fontFamily: "Inter, sans-serif" }} className="text-lg font-semibold">
           {title || "Dashboard"}
@@ -68,12 +86,28 @@ export function Navbar({ title }: { title?: string }) {
       {/* Center - Search */}
       <div className="flex-1 max-w-md mx-8">
         <div className="relative">
+<<<<<<< HEAD
           <Search className="absolute left-3 top-1/2 -translate-y-1/2" style={{ width: "16px", height: "16px", color: "#94A3B8" }} />
+=======
+          <Search
+            className="absolute left-3 top-1/2 -translate-y-1/2"
+            style={{ width: "16px", height: "16px", color: "#94A3B8" }}
+          />
+>>>>>>> 380915e (Add full project source)
           <input
             type="text"
             placeholder="Search employees, departments..."
             className="w-full pl-9 pr-4 py-2 text-sm rounded-lg outline-none transition-all"
+<<<<<<< HEAD
             style={{ backgroundColor: "#F8FAFC", border: "1px solid #E2E8F0", color: "#1E293B", fontFamily: "Inter, sans-serif" }}
+=======
+            style={{
+              backgroundColor: "#F8FAFC",
+              border: "1px solid #E2E8F0",
+              color: "#1E293B",
+              fontFamily: "Inter, sans-serif",
+            }}
+>>>>>>> 380915e (Add full project source)
             onFocus={(e) => (e.target.style.borderColor = "#2563EB")}
             onBlur={(e) => (e.target.style.borderColor = "#E2E8F0")}
           />
@@ -82,17 +116,25 @@ export function Navbar({ title }: { title?: string }) {
 
       {/* Right */}
       <div className="flex items-center gap-2">
+<<<<<<< HEAD
 
         {/* Bell Button */}
         <div className="relative">
           <button
             onClick={() => { setShowNotifications((v) => !v); setShowProfile(false); }}
+=======
+        {/* Notifications */}
+        <div className="relative">
+          <button
+            onClick={() => { setShowNotifications(!showNotifications); setShowProfile(false); }}
+>>>>>>> 380915e (Add full project source)
             className="relative p-2 rounded-lg transition-colors"
             style={{ color: "#64748B" }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#F1F5F9")}
             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "transparent")}
           >
             <Bell style={{ width: "20px", height: "20px" }} />
+<<<<<<< HEAD
             {unreadCount > 0 && (
               <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full" style={{ backgroundColor: "#EF4444" }} />
             )}
@@ -150,6 +192,55 @@ export function Navbar({ title }: { title?: string }) {
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#fff")}
               >
                 View All Notifications →
+=======
+            <span
+              className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full"
+              style={{ backgroundColor: "#EF4444" }}
+            />
+          </button>
+
+          {showNotifications && (
+            <div
+              className="absolute right-0 top-full mt-2 w-80 rounded-xl overflow-hidden z-50"
+              style={{
+                backgroundColor: "#FFFFFF",
+                border: "1px solid #E2E8F0",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
+              }}
+            >
+              <div className="px-4 py-3 border-b" style={{ borderColor: "#E2E8F0" }}>
+                <div className="flex items-center justify-between">
+                  <p style={{ color: "#1E293B" }} className="text-sm font-semibold">Notifications</p>
+                  <span
+                    className="text-xs px-2 py-0.5 rounded-full"
+                    style={{ backgroundColor: "#EFF6FF", color: "#2563EB" }}
+                  >
+                    2 new
+                  </span>
+                </div>
+              </div>
+              <ul>
+                {notifications.map((n) => (
+                  <li
+                    key={n.id}
+                    className="px-4 py-3 border-b transition-colors cursor-pointer"
+                    style={{
+                      borderColor: "#F1F5F9",
+                      backgroundColor: n.unread ? "#F8FAFC" : "#FFFFFF",
+                    }}
+                    onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#F1F5F9")}
+                    onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = n.unread ? "#F8FAFC" : "#FFFFFF")}
+                  >
+                    <p style={{ color: "#1E293B" }} className="text-sm">{n.text}</p>
+                    <p style={{ color: "#94A3B8" }} className="text-xs mt-0.5">{n.time}</p>
+                  </li>
+                ))}
+              </ul>
+              <div className="px-4 py-2.5 text-center">
+                <button style={{ color: "#2563EB" }} className="text-sm font-medium">
+                  View all notifications
+                </button>
+>>>>>>> 380915e (Add full project source)
               </div>
             </div>
           )}
@@ -161,7 +252,11 @@ export function Navbar({ title }: { title?: string }) {
         {/* Profile */}
         <div className="relative">
           <button
+<<<<<<< HEAD
             onClick={() => { setShowProfile((v) => !v); setShowNotifications(false); }}
+=======
+            onClick={() => { setShowProfile(!showProfile); setShowNotifications(false); }}
+>>>>>>> 380915e (Add full project source)
             className="flex items-center gap-2.5 pl-2 pr-3 py-1.5 rounded-lg transition-colors"
             onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#F1F5F9")}
             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "transparent")}
@@ -182,6 +277,7 @@ export function Navbar({ title }: { title?: string }) {
           {showProfile && (
             <div
               className="absolute right-0 top-full mt-2 w-52 rounded-xl overflow-hidden z-50"
+<<<<<<< HEAD
               style={{ backgroundColor: "#FFFFFF", border: "1px solid #E2E8F0", boxShadow: "0 10px 25px rgba(0,0,0,0.12)" }}
             >
               <div className="px-4 py-3" style={{ borderBottom: "1px solid #E2E8F0" }}>
@@ -193,11 +289,30 @@ export function Navbar({ title }: { title?: string }) {
                 { icon: User,     label: "My Profile", path: "/profile"  },
                 { icon: Settings, label: "Settings",   path: "/settings" },
               ].map(({ icon: Icon, label, path }) => (
+=======
+              style={{
+                backgroundColor: "#FFFFFF",
+                border: "1px solid #E2E8F0",
+                boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
+              }}
+            >
+              <div className="px-4 py-3 border-b" style={{ borderColor: "#E2E8F0" }}>
+                <p style={{ color: "#1E293B" }} className="text-sm font-semibold">Robert Chen</p>
+                <p style={{ color: "#94A3B8" }} className="text-xs">robert.chen@company.com</p>
+              </div>
+              {[
+                { icon: User, label: "My Profile" },
+                { icon: Settings, label: "Settings" },
+              ].map(({ icon: Icon, label }) => (
+>>>>>>> 380915e (Add full project source)
                 <button
                   key={label}
                   className="flex items-center gap-3 w-full px-4 py-2.5 text-sm transition-colors"
                   style={{ color: "#374151" }}
+<<<<<<< HEAD
                   onClick={() => { setShowProfile(false); navigate(path); }}
+=======
+>>>>>>> 380915e (Add full project source)
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#F8FAFC")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "transparent")}
                 >
@@ -205,12 +320,19 @@ export function Navbar({ title }: { title?: string }) {
                   {label}
                 </button>
               ))}
+<<<<<<< HEAD
 
               <div style={{ borderTop: "1px solid #E2E8F0" }}>
                 <button
                   className="flex items-center gap-3 w-full px-4 py-2.5 text-sm transition-colors"
                   style={{ color: "#EF4444" }}
                   onClick={() => { sessionStorage.removeItem("isLoggedIn"); navigate("/login"); }}
+=======
+              <div className="border-t" style={{ borderColor: "#E2E8F0" }}>
+                <button
+                  className="flex items-center gap-3 w-full px-4 py-2.5 text-sm transition-colors"
+                  style={{ color: "#EF4444" }}
+>>>>>>> 380915e (Add full project source)
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "#FFF5F5")}
                   onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = "transparent")}
                 >
