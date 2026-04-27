@@ -78,6 +78,7 @@ function ToastContainer({ toasts, onDismiss }: { toasts: Toast[]; onDismiss: (id
   };
   return (
     <div className="fixed bottom-4 left-3 right-3 sm:bottom-6 sm:left-auto sm:right-6 z-[100] flex flex-col gap-2 pointer-events-none">
+<<<<<<< HEAD
       <style>{`@keyframes tSlide{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}`}</style>
       {toasts.map((t) => {
         const c = cfg[t.kind];
@@ -378,6 +379,8 @@ function ToastContainer({ toasts, onDismiss }: { toasts: Toast[]; onDismiss: (id
   };
   return (
     <div className="fixed bottom-6 right-6 z-[100] flex flex-col gap-2 pointer-events-none">
+=======
+>>>>>>> 9631e3e (fix: notification navigation)
       <style>{`@keyframes tSlide{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}`}</style>
       {toasts.map((t) => {
         const c = cfg[t.kind];
@@ -469,9 +472,9 @@ function UpcomingInterviewsPanel({ interviews, onDismiss }: { interviews: Schedu
         <h3 style={{ color: "var(--foreground)", fontSize: 14, fontWeight: 800 }}>Upcoming Interviews</h3>
         <span className="px-2 py-0.5 rounded-full text-[11px] font-black" style={{ backgroundColor: "var(--secondary)", color: "var(--primary)" }}>{interviews.length}</span>
       </div>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3">
         {interviews.map((iv) => (
-          <div key={iv.id} className="flex items-center gap-3 px-4 py-3 rounded-2xl" style={{ backgroundColor: "var(--background)", border: "1px solid var(--border)" }}>
+          <div key={iv.id} className="flex items-center gap-3 px-4 py-3 rounded-2xl w-full sm:w-auto" style={{ backgroundColor: "var(--background)", border: "1px solid var(--border)" }}>
             <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "var(--secondary)", border: "1px solid var(--border)" }}>
               <span style={{ color: "var(--primary)", fontSize: 10, fontWeight: 700 }}>{iv.candidateInitials}</span>
             </div>
@@ -801,16 +804,16 @@ function ScheduleModal({ candidate, onClose }: { candidate: Candidate; onClose: 
   };
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ backgroundColor: "rgba(0,0,0,.45)" }} onClick={onClose}>
-      <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl" style={{ backgroundColor: "var(--card)", border: "1px solid var(--border)" }} onClick={(e) => e.stopPropagation()}>
-        <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: "1px solid var(--border)" }}>
+      <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl flex flex-col" style={{ backgroundColor: "var(--card)", border: "1px solid var(--border)", maxHeight: "90vh" }} onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between px-6 py-4 flex-shrink-0" style={{ borderBottom: "1px solid var(--border)" }}>
           <div>
             <h3 style={{ color: "var(--foreground)", fontSize: 16, fontWeight: 700 }}>Schedule Interview</h3>
             <p style={{ color: "var(--muted-foreground)", fontSize: 12, marginTop: 2 }}>with {candidate.name} — {candidate.role}</p>
           </div>
           <button onClick={onClose} className="p-2 rounded-xl" style={{ color: "var(--muted-foreground)" }}><X size={16} /></button>
         </div>
-        <div className="px-6 py-5 space-y-4">
-          <div className="grid grid-cols-2 gap-3">
+        <div className="px-6 py-5 space-y-4 overflow-y-auto flex-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label style={{ color: "var(--foreground)", fontSize: 12, fontWeight: 600 }}>Date *</label>
               <input type="date" className="w-full mt-1.5 rounded-xl px-3 py-2.5 text-sm outline-none" style={{ border: `1px solid ${!form.date ? "#EF4444" : "var(--border)"}`, backgroundColor: "var(--background)", color: "var(--foreground)" }} value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} />
@@ -838,6 +841,7 @@ function ScheduleModal({ candidate, onClose }: { candidate: Candidate; onClose: 
           </div>
         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         <div className="px-6 pb-6 flex gap-3" style={{ borderTop: "1px solid var(--border)", paddingTop: "16px" }}>
           <button
@@ -857,6 +861,9 @@ function ScheduleModal({ candidate, onClose }: { candidate: Candidate; onClose: 
 >>>>>>> 380915e (Add full project source)
 =======
         <div className="px-6 pb-6 flex gap-3" style={{ borderTop: "1px solid var(--border)", paddingTop: 16 }}>
+=======
+        <div className="px-6 pb-6 flex gap-3 flex-shrink-0" style={{ borderTop: "1px solid var(--border)", paddingTop: 16 }}>
+>>>>>>> 9631e3e (fix: notification navigation)
           <button onClick={onClose} className="flex-1 py-2.5 rounded-xl text-sm font-semibold" style={{ backgroundColor: "var(--secondary)", color: "var(--primary)" }}>Cancel</button>
           <button onClick={handleConfirm} className="flex-1 py-2.5 rounded-xl text-sm font-semibold text-white hover:opacity-90 transition-opacity flex items-center justify-center gap-2" style={{ background: "var(--primary)", boxShadow: "0 4px 12px rgba(5,150,105,.35)" }}>
             <CheckCircle size={14} />Confirm Schedule
@@ -984,16 +991,21 @@ function AddCandidateModal({ stage, onClose, onAdd }: { stage: Stage; onClose: (
         {/* Header */}
 =======
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ backgroundColor: "rgba(0,0,0,.45)" }} onClick={onClose}>
+<<<<<<< HEAD
       <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl" style={{ backgroundColor: "var(--card)", border: "1px solid var(--border)" }} onClick={(e) => e.stopPropagation()}>
 >>>>>>> 0d5d363 (Add Signup page and update Login, Recruitment, and routes)
         <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: "1px solid var(--border)" }}>
+=======
+      <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl flex flex-col" style={{ backgroundColor: "var(--card)", border: "1px solid var(--border)", maxHeight: "90vh" }} onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between px-6 py-4 flex-shrink-0" style={{ borderBottom: "1px solid var(--border)" }}>
+>>>>>>> 9631e3e (fix: notification navigation)
           <div>
             <h3 style={{ color: "var(--foreground)", fontSize: 16, fontWeight: 700 }}>Add Candidate</h3>
             <p style={{ color: "var(--muted-foreground)", fontSize: 12, marginTop: 2 }}>Adding to <span style={{ color: "#10B981", fontWeight: 600 }}>{stage}</span></p>
           </div>
           <button onClick={onClose} className="p-2 rounded-xl" style={{ color: "var(--muted-foreground)" }}><X size={16} /></button>
         </div>
-        <div className="px-6 py-5 space-y-4">
+        <div className="px-6 py-5 space-y-4 overflow-y-auto flex-1">
           {error && <div className="px-4 py-3 rounded-xl text-sm font-medium" style={{ backgroundColor: "rgba(239,68,68,.1)", color: "#EF4444" }}>{error}</div>}
           <div>
             <label style={{ color: "var(--foreground)", fontSize: 12, fontWeight: 600 }}>Full Name</label>
@@ -1013,7 +1025,7 @@ function AddCandidateModal({ stage, onClose, onAdd }: { stage: Stage; onClose: (
             <label style={{ color: "var(--foreground)", fontSize: 12, fontWeight: 600 }}>Email Address</label>
             <input className="w-full mt-1.5 rounded-xl px-3 py-2.5 text-sm outline-none" style={{ border: "1px solid var(--border)", backgroundColor: "var(--background)", color: "var(--foreground)" }} placeholder="candidate@example.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label style={{ color: "var(--foreground)", fontSize: 12, fontWeight: 600 }}>Location</label>
               <div className="relative mt-1.5">
@@ -1042,6 +1054,7 @@ function AddCandidateModal({ stage, onClose, onAdd }: { stage: Stage; onClose: (
         </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className="px-6 pb-6 flex gap-3 flex-shrink-0" style={{ borderTop: "1px solid var(--border)", paddingTop: 16 }}>
           <button onClick={onClose} className="flex-1 py-2.5 rounded-xl text-sm font-semibold" style={{ backgroundColor: "var(--secondary)", color: "var(--primary)" }}>Cancel</button>
           <button onClick={handleAdd} className="flex-1 py-2.5 rounded-xl text-sm font-semibold text-white hover:opacity-90 transition-opacity flex items-center justify-center gap-2" style={{ background: "var(--primary)", boxShadow: "0 4px 12px rgba(5,150,105,.35)" }}>
@@ -1067,6 +1080,9 @@ function AddCandidateModal({ stage, onClose, onAdd }: { stage: Stage; onClose: (
 >>>>>>> 380915e (Add full project source)
 =======
         <div className="px-6 pb-6 flex gap-3" style={{ borderTop: "1px solid var(--border)", paddingTop: 16 }}>
+=======
+        <div className="px-6 pb-6 flex gap-3 flex-shrink-0" style={{ borderTop: "1px solid var(--border)", paddingTop: 16 }}>
+>>>>>>> 9631e3e (fix: notification navigation)
           <button onClick={onClose} className="flex-1 py-2.5 rounded-xl text-sm font-semibold" style={{ backgroundColor: "var(--secondary)", color: "var(--primary)" }}>Cancel</button>
           <button onClick={handleAdd} className="flex-1 py-2.5 rounded-xl text-sm font-semibold text-white hover:opacity-90 transition-opacity flex items-center justify-center gap-2" style={{ background: "var(--primary)", boxShadow: "0 4px 12px rgba(5,150,105,.35)" }}>
             <Plus size={14} />Add Candidate
@@ -1101,18 +1117,24 @@ function PostJobModal({ onClose, onPost }: { onClose: () => void; onPost: (j: Om
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ backgroundColor: "rgba(0,0,0,.45)" }} onClick={onClose}>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl flex flex-col" style={{ backgroundColor: "var(--card)", border: "1px solid var(--border)", maxHeight: "90vh" }} onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between px-6 py-4 flex-shrink-0" style={{ borderBottom: "1px solid var(--border)" }}>
 =======
       <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl" style={{ backgroundColor: "var(--card)", border: "1px solid var(--border)" }} onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: "1px solid var(--border)" }}>
 >>>>>>> 0d5d363 (Add Signup page and update Login, Recruitment, and routes)
+=======
+      <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-2xl flex flex-col" style={{ backgroundColor: "var(--card)", border: "1px solid var(--border)", maxHeight: "90vh" }} onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-center justify-between px-6 py-4 flex-shrink-0" style={{ borderBottom: "1px solid var(--border)" }}>
+>>>>>>> 9631e3e (fix: notification navigation)
           <div>
             <h3 style={{ color: "var(--foreground)", fontSize: 16, fontWeight: 700 }}>Post a New Job</h3>
             <p style={{ color: "var(--muted-foreground)", fontSize: 12, marginTop: 2 }}>Create a new job opening for recruitment</p>
           </div>
           <button onClick={onClose} className="p-2 rounded-xl" style={{ color: "var(--muted-foreground)" }}><X size={16} /></button>
         </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <div className="px-6 py-5 space-y-4 overflow-y-auto flex-1">
           {field("Job Title *", "title", "e.g. Senior React Developer", <Briefcase size={13} />)}
@@ -1122,6 +1144,11 @@ function PostJobModal({ onClose, onPost }: { onClose: () => void; onPost: (j: Om
           {field("Job Title *", "title", "e.g. Senior React Developer", <Briefcase size={13} />)}
           <div className="grid grid-cols-2 gap-3">
 >>>>>>> 0d5d363 (Add Signup page and update Login, Recruitment, and routes)
+=======
+        <div className="px-6 py-5 space-y-4 overflow-y-auto flex-1">
+          {field("Job Title *", "title", "e.g. Senior React Developer", <Briefcase size={13} />)}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+>>>>>>> 9631e3e (fix: notification navigation)
             {(["department", "location"] as const).map((k) => (
               <div key={k}>
                 <label style={{ color: "var(--foreground)", fontSize: 12, fontWeight: 600 }}>{k.charAt(0).toUpperCase() + k.slice(1)}</label>
@@ -1136,10 +1163,14 @@ function PostJobModal({ onClose, onPost }: { onClose: () => void; onPost: (j: Om
             ))}
           </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
 =======
           <div className="grid grid-cols-2 gap-3">
 >>>>>>> 0d5d363 (Add Signup page and update Login, Recruitment, and routes)
+=======
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+>>>>>>> 9631e3e (fix: notification navigation)
             <div>
               <label style={{ color: "var(--foreground)", fontSize: 12, fontWeight: 600 }}>Job Type</label>
               <select className="w-full mt-1.5 rounded-xl px-3 py-2.5 text-sm outline-none appearance-none" style={{ border: "1px solid var(--border)", backgroundColor: "var(--background)", color: "var(--foreground)" }} value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })}>
@@ -1155,10 +1186,14 @@ function PostJobModal({ onClose, onPost }: { onClose: () => void; onPost: (j: Om
           </div>
         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className="px-6 pb-6 flex gap-3 flex-shrink-0" style={{ borderTop: "1px solid var(--border)", paddingTop: 16 }}>
 =======
         <div className="px-6 pb-6 flex gap-3" style={{ borderTop: "1px solid var(--border)", paddingTop: 16 }}>
 >>>>>>> 0d5d363 (Add Signup page and update Login, Recruitment, and routes)
+=======
+        <div className="px-6 pb-6 flex gap-3 flex-shrink-0" style={{ borderTop: "1px solid var(--border)", paddingTop: 16 }}>
+>>>>>>> 9631e3e (fix: notification navigation)
           <button onClick={onClose} className="flex-1 py-2.5 rounded-xl text-sm font-semibold" style={{ backgroundColor: "var(--secondary)", color: "var(--primary)" }}>Cancel</button>
           <button onClick={handlePost} className="flex-1 py-2.5 rounded-xl text-sm font-semibold text-white hover:opacity-90" style={{ background: "var(--primary)", boxShadow: "0 4px 12px rgba(5,150,105,.35)" }}>Post Job</button>
         </div>

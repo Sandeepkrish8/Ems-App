@@ -1,5 +1,9 @@
 import React from "react";
+<<<<<<< HEAD
 import { useNavigate } from "react-router";
+=======
+import { useNavigate } from "react-router-dom";
+>>>>>>> 9631e3e (fix: notification navigation)
 
 export type NotificationType = "leave" | "payroll" | "recruitment" | "system" | "performance" | "attendance";
 

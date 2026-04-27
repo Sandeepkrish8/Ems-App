@@ -26,6 +26,7 @@ import { Help } from "./pages/Help";
 import { Training } from "./pages/Training";
 import { Documents } from "./pages/Documents";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import NotificationsHistory from "./pages/Notifications";
 =======
 import SmartSearch from "./pages/SmartSearch";
@@ -33,6 +34,9 @@ import { ShiftSchedule } from "./pages/ShiftSchedule";
 >>>>>>> 380915e (Add full project source)
 =======
 >>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
+=======
+import NotificationsHistory from "./pages/Notifications";
+>>>>>>> 9631e3e (fix: notification navigation)
 
 const AuthGuard = ({ children }: { children: React.ReactNode }) => {
   const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
@@ -95,11 +99,14 @@ export const router = createBrowserRouter([
       { path: "training", Component: Training },
       { path: "documents", Component: Documents },
       { path: "notifications", Component: NotificationsHistory }, // ✅ moved inside Layout
+<<<<<<< HEAD
 =======
       { path: "help", Component: Help },
       { path: "training", Component: Training },
       { path: "documents", Component: Documents },
 >>>>>>> b684920 (Add 5 new screens: Onboarding Wizard, 404, Help & Support, Training, Documents)
+=======
+>>>>>>> 9631e3e (fix: notification navigation)
     ],
   },
   {
