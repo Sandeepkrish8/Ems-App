@@ -21,6 +21,7 @@ import { NotFound } from "./pages/NotFound";
 import { Help } from "./pages/Help";
 import { Training } from "./pages/Training";
 import { Documents } from "./pages/Documents";
+import NotificationsHistory from "./pages/Notifications";
 
 const AuthGuard = ({ children }: { children: React.ReactNode }) => {
   const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
@@ -65,6 +66,7 @@ export const router = createBrowserRouter([
       { path: "help", Component: Help },
       { path: "training", Component: Training },
       { path: "documents", Component: Documents },
+      { path: "notifications", Component: NotificationsHistory }, // ✅ moved inside Layout
     ],
   },
   {
